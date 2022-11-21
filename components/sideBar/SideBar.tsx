@@ -44,28 +44,23 @@ const items = [
   },
 ];
 
-const handleClick = (event: any) => {
-  event.currentTarget.classList.add("border-solid");
-  // event.target != items.className;
-};
-
 export default function SideBar() {
 
   const [stateIndex, setStateIndex] = useState(0);
 
   return (
-    <List className="bg-white text-gray-400 rounded-lg w-full">
+    <List className="bg-white text-gray-400 rounded-lg pt-11 py-20 mt-[3.1rem]">
       {items.map((val, index) => {
         return (
           <Link href={val.href} key={index}>
             <ListItem className="flex justify-end px-0">
               <ListItemButton
-                className={`w-full flex justify-end border-sky-700 border-y-0 border-r-0 border-l-[3px] py-0 ${index == stateIndex ? "border-solid" : ""}`}
+                className={`w-full flex justify-end border-sky-600 border-y-0 border-r-0 border-l-[3px] py-0 ${index == stateIndex ? "border-solid" : ""}`}
                 // eslint-disable-next-line react-hooks/rules-of-hooks
                 onClick={() => setStateIndex(index)}
               >
                 <Typography className="text-right mx-3">{val.title}</Typography>
-                <FontAwesomeIcon icon={val.icon} />
+                <FontAwesomeIcon icon={val.icon} className={`${index == stateIndex ? "text-sky-600" : ""}`} />
               </ListItemButton>
             </ListItem>
           </Link>

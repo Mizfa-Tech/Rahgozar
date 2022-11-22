@@ -14,14 +14,14 @@ import { useState } from "react";
 
 const items = [
   {
-    title: "آقای رهگذر",
+    title: "رهگذر",
     icon: faPenToSquare,
     href: "/",
   },
   {
-    title: "متن باز",
+    title: "متن من",
     icon: faPen,
-    href: "/",
+    href: "/myText",
   },
   {
     title: "درباره ما",
@@ -39,7 +39,7 @@ const items = [
     href: "/",
   },
   {
-    title: "چرا آقای رهگذر",
+    title: "چرا رهگذر",
     icon: faQuestion,
     href: "/",
   },

@@ -1,38 +1,26 @@
-import { Typography, Container } from "@mui/material";
-import Button from "@mui/material/Button";
+import MainLayout from "../components/layouts/MainLayout";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Typography, Container, Button } from "@mui/material";
+import { useState } from "react";
 
-export default function TextContainer() {
+export default function MyText() {
+
   return (
-    <Grid2 className="bg-white rounded-lg w-[80%] m-auto text-gray-400 py-4">
-      <Container>
-        <Grid2 className="flex justify-end border-b-2 border-solid border-gray-300 border-x-0 border-t-0 pb-4">
-          <Grid2 className="text-right">
-            <Typography className="text-black">:تعداد</Typography>
-            <Button className="bg-gray-300 text-gray-500 w-24 py-1 mt-1 flex justify-start">
+    <MainLayout index={1}>
+      <Grid2 className="bg-white rounded-lg w-[80%] m-auto py-4">
+        <Container>
+          <Grid2 className="flex justify-between border-b-2 border-solid border-gray-300 border-x-0 border-t-0 pb-4 mt-5">
+            <Typography className="flex items-center justify-center">
               {" "}
-              <FontAwesomeIcon icon={faChevronDown} className="mr-6" /> 1
-            </Button>
+              <span className="w-10 h-7 bg-gray-300 text-gray-500 flex justify-center items-center rounded-lg pt-[0.9px] mr-1">
+                100
+              </span>{" "}
+              :شمارش کلمات{" "}
+            </Typography>
+            <Typography>:متن مورد نظر خود را در کادر پایین بنویسید</Typography>
           </Grid2>
-          <Grid2 className="text-right mx-3">
-            <Typography className="text-black">:نوع متن</Typography>
-            <Button className="bg-gray-300 text-gray-500 w-24 py-1 mt-1 flex justify-start">
-              {" "}
-              <FontAwesomeIcon icon={faChevronDown} className="mr-4" /> پاراگراف
-            </Button>
-          </Grid2>
-          <Grid2 className="text-right">
-            <Typography className="text-black">:زبان</Typography>
-            <Button className="bg-gray-300 text-gray-500 py-1 w-24 mt-1 flex justify-start">
-              {" "}
-              <FontAwesomeIcon icon={faChevronDown} className="mr-4" /> فارسی
-            </Button>
-          </Grid2>
-        </Grid2>
-        <Grid2 className="mt-3">
-          <Typography align="right" variant="body2" className="leading-9">
+          <Grid2 className="mt-3">
+          <Typography align="right" variant="body2" className="leading-9 text-gray-500 mt-6">
             رهگذر نویسنده ای خیالی است که متنی موقت برای طراحان گرافیک و وبسایت
             مینویسد. این متن یک متن ساختگی است، که در طرح های اولیه گرافیکی و
             پیاده سازی اولیه وب سایت ها استفاده می شود. آقای رهگذر در مورد همه
@@ -52,7 +40,8 @@ export default function TextContainer() {
             دانلود متن
           </Button>
         </Grid2>
-      </Container>
-    </Grid2>
+        </Container>
+      </Grid2>
+    </MainLayout>
   );
 }

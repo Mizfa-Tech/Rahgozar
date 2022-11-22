@@ -6,6 +6,7 @@ import SideBar from "../sideBar/SideBar";
 
 type Props = {
   children: any;
+  index: number,
 };
 
 export default function MainLayout(props: Props) {
@@ -23,7 +24,7 @@ export default function MainLayout(props: Props) {
             </Grid2>
           </Grid2>
           <Grid2 md={2} className="flex justify-start items-center">
-            <SideBar />
+            <SideBar index={props.index} />
           </Grid2>
         </Grid2>
       </Container>

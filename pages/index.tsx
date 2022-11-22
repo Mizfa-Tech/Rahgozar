@@ -1,7 +1,8 @@
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import Head from "next/head";
+// import { title } from "process";
 import MainLayout from "../components/layouts/MainLayout";
-import TextContainer from "../components/sideBar/textContainer";
+import TextContainer from "../components/textContainer";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Grid2>
-        <MainLayout>
+        <MainLayout index={0}>
           <TextContainer />
         </MainLayout>
       </Grid2>

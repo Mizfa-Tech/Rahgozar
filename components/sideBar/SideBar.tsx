@@ -7,6 +7,7 @@ import {
   faMobile,
   faWallet,
   faQuestion,
+  faUsers
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useState } from "react";
@@ -42,14 +43,23 @@ const items = [
     icon: faQuestion,
     href: "/",
   },
+  {
+    title: "دست اندرکاران",
+    icon: faUsers,
+    href: "/ourTeam",
+  },
 ];
 
-export default function SideBar() {
+type Props = {
+  index: number,
+}
 
-  const [stateIndex, setStateIndex] = useState(0);
+export default function SideBar(props: Props) {
+
+  const [stateIndex, setStateIndex] = useState(props.index);
 
   return (
-    <List className="bg-white text-gray-400 rounded-lg pt-11 py-20 mt-[3.1rem]">
+    <List className="bg-white text-gray-400 rounded-lg pt-7 pb-14 mt-[1.7rem]">
       {items.map((val, index) => {
         return (
           <Link href={val.href} key={index}>
@@ -59,7 +69,7 @@ export default function SideBar() {
                 // eslint-disable-next-line react-hooks/rules-of-hooks
                 onClick={() => setStateIndex(index)}
               >
-                <Typography className="text-right mx-3">{val.title}</Typography>
+                <Typography className={`text-right mx-3 ${index == stateIndex ? "text-black" : ""}`}>{val.title}</Typography>
                 <FontAwesomeIcon icon={val.icon} className={`${index == stateIndex ? "text-sky-600" : ""}`} />
               </ListItemButton>
             </ListItem>

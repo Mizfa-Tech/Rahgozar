@@ -6,6 +6,18 @@ body {
   background-color: #EFEFEF;
 }
 
+input {
+  text-align: right;
+  width: 100%;
+  height: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 12rem;
+  text-align: right;
+}
+
 @font-face {
   font-family: Vazirmatn;
   src: url('../public/fonts/Vazirmatn-Regular.woff2') format('woff2');

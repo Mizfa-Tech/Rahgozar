@@ -1,6 +1,6 @@
 import MainLayout from "../components/layouts/MainLayout";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { Typography, Container, Button, TextareaAutosize } from "@mui/material";
+import { Typography, Container, Button, Input } from "@mui/material";
 import { useState } from "react";
 
 
@@ -23,7 +23,7 @@ export default function MyText() {
             <Typography>:متن مورد نظر خود را در کادر پایین بنویسید</Typography>
           </Grid2>
           <Grid2>
-            <TextareaAutosize className="text-gray-500 mt-6 w-full font-[Vazirmatn] border-0 h-44 leading-8 overflow-auto text-right" defaultValue="رهگذر نویسنده ای خیالی است که متنی موقت برای طراحان گرافیک و 
+            <Input className="text-gray-500 mt-5 mb-2 w-full border-0 h-44 leading-[1.7rem] overflow-auto text-right" defaultValue="رهگذر نویسنده ای خیالی است که متنی موقت برای طراحان گرافیک و 
                 مینویسد. این متن یک متن ساختگی است، که در طرح های اولیه گرافیکی و
                 پیاده سازی اولیه وب سایت ها استفاده می شود. آقای رهگذر در مورد همه
                 چیز اطلاعات دارد از صنعت چاپ سنتی و صنعتی گرفته تا تکنولوژی های روز
@@ -31,7 +31,7 @@ export default function MyText() {
                 زندگی شماست. آقای رهگذر کتابهای زیادی درباره ی نرم افزار های مختلف
                 خوانده است و می تواند راهنمای خوبی برای طراحان فارسی زبان باشد.
                 طراحان میتوانند امید داشته باشند که با پیشرفت دنیای تکنولوژی شرایط و
-                مشکلات سخت در حوزه ی کاریشان به پایان برسد" onKeyUp={(e) => setNumber(e.currentTarget.value?.length)} />
+                مشکلات سخت در حوزه ی کاریشان به پایان برسد" onKeyUp={(e) => setNumber(e.currentTarget.value?.length)} disableUnderline multiline />
           </Grid2>
           <Grid2 className="flex justify-center my-3">
             <Button className="border-solid border-[1px] border-sky-600 bg-white text-sky-600 w-28 rounded-xl">

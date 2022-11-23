@@ -31,7 +31,7 @@ const items = [
   {
     title: "تماس با ما",
     icon: faMobile,
-    href: "/",
+    href: "/contactUs",
   },
   {
     title: "کمک مالی",

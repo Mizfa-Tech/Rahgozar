@@ -7,7 +7,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 export let theme = createTheme({
   typography: {
     fontFamily: "Vazirmatn, sans-serif",
-  }
+  }, 
 });
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -6,33 +6,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function TextContainer() {
   return (
-    <Grid2 className="bg-white rounded-lg w-[80%] m-auto text-gray-400 py-4">
+    <Grid2 className="bg-white rounded-lg w-full md:w-[80%] m-auto text-gray-400 py-4">
       <Container>
         <Grid2 className="flex justify-end border-b-2 border-solid border-gray-300 border-x-0 border-t-0 pb-4">
           <Grid2 className="text-right">
             <Typography className="text-black">:تعداد</Typography>
-            <Button className="bg-gray-300 text-gray-500 w-24 py-1 mt-1 flex justify-start">
+            <Button className="bg-gray-300 text-gray-500 w-20 md:w-24 py-1 mt-1 flex justify-start">
               {" "}
               <FontAwesomeIcon icon={faChevronDown} className="mr-6" /> 1
             </Button>
           </Grid2>
           <Grid2 className="text-right mx-3">
             <Typography className="text-black">:نوع متن</Typography>
-            <Button className="bg-gray-300 text-gray-500 w-24 py-1 mt-1 flex justify-start">
+            <Button className="bg-gray-300 text-gray-500 w-20 md:w-24 py-1 mt-1 flex justify-start">
               {" "}
-              <FontAwesomeIcon icon={faChevronDown} className="mr-4" /> پاراگراف
+              <FontAwesomeIcon icon={faChevronDown} className="mr-3" /> پاراگراف
             </Button>
           </Grid2>
           <Grid2 className="text-right">
             <Typography className="text-black">:زبان</Typography>
-            <Button className="bg-gray-300 text-gray-500 py-1 w-24 mt-1 flex justify-start">
+            <Button className="bg-gray-300 text-gray-500 py-1 w-20 md:w-24 mt-1 flex justify-start">
               {" "}
               <FontAwesomeIcon icon={faChevronDown} className="mr-4" /> فارسی
             </Button>
           </Grid2>
         </Grid2>
         <Grid2 className="mt-3">
-          <Typography align="right" variant="body2" className="leading-9">
+          <Typography align="right" variant="body2" className="leading-7 md:leading-9">
             رهگذر نویسنده ای خیالی است که متنی موقت برای طراحان گرافیک و وبسایت
             مینویسد. این متن یک متن ساختگی است، که در طرح های اولیه گرافیکی و
             پیاده سازی اولیه وب سایت ها استفاده می شود. آقای رهگذر در مورد همه

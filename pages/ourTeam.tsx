@@ -30,7 +30,7 @@ const member = [
 export default function Ourteam() {
   return (
     <MainLayout index={6}>
-      <Grid2 className="bg-white rounded-lg w-[80%] m-auto py-4">
+      <Grid2 className="bg-white rounded-lg w-full md:w-[80%] m-auto py-4">
         <Container>
             <Grid2 className="text-center">
             <Typography variant="h4" className="text-bold m-2" >تیم ما</Typography>
@@ -39,11 +39,11 @@ export default function Ourteam() {
                 وبسایت مینویسد
             </Typography>
             </Grid2>
-            <Grid2 className="flex justify-between my-9">
+            <Grid2 className="flex justify-between flex-col md:flex-row my-9">
               {
                 member.map((val, index) => {
                   return(
-                    <Grid2 key={index}>
+                    <Grid2 key={index} className="m-auto my-3">
                       <Image src={val.picture} alt="Team Member" className="w-36 h-32 rounded-md" />
                       <Typography variant="subtitle2" align="right" className="text-black">{val.name}</Typography>
                       <Typography variant="subtitle2" align="right" className="text-gray-400">{val.job}</Typography>

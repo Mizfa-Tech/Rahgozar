@@ -39,14 +39,16 @@ export default function Ourteam() {
                 وبسایت مینویسد
             </Typography>
             </Grid2>
-            <Grid2 className="flex justify-between flex-col md:flex-row my-9">
+            <Grid2 className="flex justify-between flex-col sm:flex-row sm:flex-wrap my-9">
               {
                 member.map((val, index) => {
                   return(
-                    <Grid2 key={index} className="m-auto my-3">
-                      <Image src={val.picture} alt="Team Member" className="w-36 h-32 rounded-md" />
-                      <Typography variant="subtitle2" align="right" className="text-black">{val.name}</Typography>
-                      <Typography variant="subtitle2" align="right" className="text-gray-400">{val.job}</Typography>
+                    <Grid2 key={index} className="m-auto my-3 md:my-0 w-full sm:w-1/2 md:w-1/4 ">
+                      <Grid2 className="flex justify-center">
+                        <Image src={val.picture} alt="Team Member" className="w-36 h-32 rounded-md" />
+                      </Grid2>
+                      <Typography variant="subtitle2" className="text-black text-center md:text-right">{val.name}</Typography>
+                      <Typography variant="subtitle2" className="text-gray-400 text-center md:text-right">{val.job}</Typography>
                     </Grid2>
                   );
                 })

@@ -13,17 +13,17 @@ export default function MainLayout(props: Props) {
   return (
     <Grid2>
       <Container>
-        <Grid2 container>
+        <Grid2 container className="flex">
           <Grid2 xs={12} md={10}>
             <Grid2>
-              <Header />
+              <Header index={props.index} />
             </Grid2>
             <Grid2>{props.children}</Grid2>
             <Grid2>
               <Footer />
             </Grid2>
           </Grid2>
-          <Grid2 md={2} className="hidden md:flex justify-start items-center">
+          <Grid2 sx={{display: {xs: "none", md: "flex"}}} md={2} className="justify-start items-center">
             <SideBar index={props.index} />
           </Grid2>
         </Grid2>

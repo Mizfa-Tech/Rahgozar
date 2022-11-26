@@ -44,7 +44,7 @@ export default function Ourteam() {
                 member.map((val, index) => {
                   return(
                     <Grid2 key={index} className="m-auto my-3 md:my-0 w-full sm:w-1/2 md:w-1/4 ">
-                      <Grid2 className="flex justify-center">
+                      <Grid2 className="flex justify-center md:justify-end">
                         <Image src={val.picture} alt="Team Member" className="w-36 h-32 rounded-md" />
                       </Grid2>
                       <Typography variant="subtitle2" className="text-black text-center md:text-right">{val.name}</Typography>

@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Vazirmatn, sans-serif";
-  background-color: #EFEFEF;
+  background-color: whitesmoke;
 }
 
 input {
@@ -16,6 +16,10 @@ textarea {
   width: 100%;
   height: 12rem;
   text-align: right;
+}
+
+.Select div:first-child {
+  padding: none;
 }
 
 @font-face {

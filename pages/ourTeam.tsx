@@ -30,10 +30,10 @@ const member = [
 export default function Ourteam() {
   return (
     <MainLayout index={6}>
-      <Grid2 className="bg-white rounded-lg w-full md:w-[80%] m-auto py-4">
+      <Grid2 className="bg-white rounded-xl w-full md:w-[80%] m-auto py-4">
         <Container>
             <Grid2 className="text-center">
-            <Typography variant="h4" className="text-bold m-2" >تیم ما</Typography>
+            <Typography variant="h4" className="text-bold m-3" >تیم ما</Typography>
             <Typography variant="body2" className="text-gray-500">
                 رهگذر نویسنده ای خیالی است که متنی موقت برای طراحان گرافیک و
                 وبسایت مینویسد
@@ -43,8 +43,8 @@ export default function Ourteam() {
               {
                 member.map((val, index) => {
                   return(
-                    <Grid2 key={index} className="m-auto my-3 md:my-0 w-full sm:w-1/2 md:w-1/4 ">
-                      <Grid2 className="flex justify-center md:justify-end">
+                    <Grid2 key={index} className="m-auto my-3 md:my-0 w-full sm:w-1/2 md:w-[23%] shadow-sm rounded-lg p-3">
+                      <Grid2 className="flex justify-center">
                         <Image src={val.picture} alt="Team Member" className="w-36 h-32 rounded-md" />
                       </Grid2>
                       <Typography variant="subtitle2" className="text-black text-center md:text-right">{val.name}</Typography>

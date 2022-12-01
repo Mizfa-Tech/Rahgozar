@@ -13,42 +13,43 @@ export default function TextContainer() {
   const [ select, setSelect ] = useState("");
 
   return (
-    <Grid2 className="bg-white rounded-xl w-full md:w-[80%] m-auto text-gray-400 py-4">
+    <Grid2 className="bg-white rounded-xl w-full md:w-[80%] m-auto text-gray-400 py-4 shadow-md">
       <Container>
-        <Grid2 className="flex justify-end border-b-2 border-solid border-gray-300 border-x-0 border-t-0 pb-4">
+        <Grid2 className="flex justify-end border-b-2 border-solid border-gray-300 border-x-0 border-t-0 pb-6 pt-4">
           <Grid2 className="text-right w-20 md:w-28">
             <Typography className="text-black">:تعداد</Typography>
-            <Button className="bg-gray-100 text-gray-500 w-full py-1 mt-1 flex justify-start rounded-lg">
-              {" "}
-              <FontAwesomeIcon icon={faChevronDown} className="mr-4 md:mr-10" /> 1
-            </Button>
+            <Select value={select} onChange={(e) => setSelect(e.target.value)} displayEmpty
+            inputProps={{"className":"py-0 border-0 flex justify-between text-left"}}
+            className="bg-gray-100 text-gray-500 w-full py-1 mt-1 flex justify-start rounded-lg border-0 select" >
+              <MenuItem value="">
+                1
+              </MenuItem>
+            </Select>
           </Grid2>
           <Grid2 className="text-right mx-2 md:mx-4 w-20 md:w-28">
             <Typography className="text-black">:نوع متن</Typography>
-            {/* <Select value={select} onChange={(e) => setSelect(e.target.value)} displayEmpty
-            className="bg-gray-100 text-gray-500 w-full py-1 mt-1 flex justify-start rounded-lg border-0 select" >
+            <Select value={select} onChange={(e) => setSelect(e.target.value)} displayEmpty
+            inputProps={{"className":"py-0 border-none flex justify-between"}}
+            className="bg-gray-100 text-gray-500 w-full py-1 mt-1 flex justify-start rounded-lg border-none select" >
               <MenuItem value="">
-                <FontAwesomeIcon icon={faChevronDown} className="mr-3 md:mr-4" />  
                 پاراگراف
               </MenuItem>
-            </Select> */}
-
-            <Button className="bg-gray-100 text-gray-500 w-full py-1 mt-1 flex justify-start rounded-lg">
-              {" "}
-              <FontAwesomeIcon icon={faChevronDown} className="mr-3 md:mr-4" /> پاراگراف
-            </Button>
+            </Select>
           </Grid2>
           <Grid2 className="text-right w-20 md:w-28">
             <Typography className="text-black">:زبان</Typography>
-            <Button className="bg-gray-100 text-gray-500 w-full py-1 mt-1 flex justify-start rounded-lg">
-              {" "}
-              <FontAwesomeIcon icon={faChevronDown} className="mr-4 md:mr-6" /> فارسی
-            </Button>
+            <Select value={select} onChange={(e) => setSelect(e.target.value)} displayEmpty
+            inputProps={{"className":"py-0 border-0 flex justify-between text-left"}}
+            className="bg-gray-100 text-gray-500 w-full py-1 mt-1 flex justify-start rounded-lg border-0 select" >
+              <MenuItem value="">
+                فارسی
+              </MenuItem>
+            </Select>
           </Grid2>
         </Grid2>
         <Grid2 className="mt-3">
           <Input
-            className="text-gray-500 mt-0 mb-2 w-full border-0 h-auto leading-9 overflow-auto text-right text-sm"
+            className="text-gray-500 mt-2 mb-2 w-full border-0 h-auto leading-9 overflow-auto text-right text-sm"
             value={value}
             onChange={(e) => setValue(e.currentTarget.value)}
             disableUnderline
@@ -62,11 +63,12 @@ export default function TextContainer() {
               کپی متن
             </Button>
           </CopyToClipboard>
-            <a href="../components/files/Rahgozar.txt" download>
-              <Button className="bg-sky-600 text-white w-28 ml-4 rounded-lg">
+            {/* <a href="../public/files/Rahgozar.txt" download> */}
+              <Button className="bg-sky-600 text-white w-28 ml-4 rounded-lg" href="../public/files/Rahgozar.txt"
+              download="Rahgozar.txt">
                 دانلود متن
               </Button>
-            </a>
+            {/* </a> */}
         </Grid2>
       </Container>
     </Grid2>

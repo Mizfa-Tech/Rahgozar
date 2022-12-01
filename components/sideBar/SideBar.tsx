@@ -59,7 +59,7 @@ export default function SideBar(props: Props) {
   const [stateIndex, setStateIndex] = useState(props.index);
 
   return (
-    <List className="bg-white text-gray-400 rounded-xl pt-10 pb-16 mt-[0.3rem]">
+    <List className="bg-white w-full text-gray-400 rounded-xl pt-[3.25rem] pb-20 shadow-md">
       {items.map((val, index) => {
         return (
           <Link href={val.href} key={index}>

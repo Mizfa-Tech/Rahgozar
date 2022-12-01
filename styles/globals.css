@@ -18,9 +18,9 @@ textarea {
   text-align: right;
 }
 
-.Select div:first-child {
+/* .Select div:first-child {
   padding: none;
-}
+} */
 
 @font-face {
   font-family: Vazirmatn;

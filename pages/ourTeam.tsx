@@ -30,31 +30,28 @@ const member = [
 export default function Ourteam() {
   return (
     <MainLayout index={6}>
-      <Grid2 className="bg-white rounded-xl w-full md:w-[80%] m-auto py-4 shadow-md">
-        <Container>
-            <Grid2 className="text-center">
-            <Typography variant="h4" className="text-bold m-3" >تیم ما</Typography>
-            <Typography variant="body2" className="text-gray-500">
-                رهگذر نویسنده ای خیالی است که متنی موقت برای طراحان گرافیک و
-                وبسایت مینویسد
-            </Typography>
-            </Grid2>
-            <Grid2 className="flex justify-between flex-col sm:flex-row sm:flex-wrap my-[2.90rem] px-2">
-              {
-                member.map((val, index) => {
-                  return(
-                    <Grid2 key={index} className="my-3 md:my-0 w-full sm:w-1/2 md:w-[20%] shadow-sm rounded-lg py-3">
-                      <Grid2 className="flex justify-center">
-                        <Image src={val.picture} alt="Team Member" className="w-36 h-32 rounded-md" />
-                      </Grid2>
-                      <Typography variant="subtitle2" className="text-black text-center md:text-right mt-2">{val.name}</Typography>
-                      <Typography variant="subtitle2" className="text-gray-400 text-center md:text-right">{val.job}</Typography>
-                    </Grid2>
-                  );
-                })
-              }
-            </Grid2>
-        </Container>
+      <Grid2 className="bg-white rounded-xl w-full md:w-[80%] m-auto pt-2 pb-5 shadow-md">
+        <Grid2 className="text-center">
+          <Typography variant="h5" className="font-bold m-3" >تیم ما</Typography>
+          <Typography className="text-gray-700 w-10/12 m-auto md:w-full text-right sm:text-center text-xs">
+            رهگذر نویسنده ای خیالی است که متنی موقت برای طراحان گرافیک و وبسایت مینویسد
+          </Typography>
+          </Grid2>
+        <Grid2 className="flex justify-between flex-col sm:flex-row sm:flex-wrap md:my-[3.90rem] px-7">
+          {
+            member.map((val, index) => {
+              return(
+                <Grid2 key={index} className=" my-5 md:my-0 w-10/12 m-auto sm:w-5/12 md:w-[21%] md:m-0 shadow-md md:shadow-md rounded-lg px-6 md:px-2 py-4">
+                  <Grid2 className="flex justify-center">
+                    <Image src={val.picture} alt="Team Member" className="w-40 h-32 md:w-[8.75rem] md:h-28 rounded-md" />
+                  </Grid2>
+                  <Typography variant="subtitle2" className="text-black text-right mt-2">{val.name}</Typography>
+                  <Typography className="text-gray-500 text-right text-xs mt-1">{val.job}</Typography>
+                </Grid2>
+              );
+            })
+          }
+        </Grid2>
       </Grid2>
     </MainLayout>
   );

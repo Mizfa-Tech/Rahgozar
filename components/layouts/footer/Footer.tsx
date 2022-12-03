@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return(
-        <Grid2 className="flex justify-center flex-col mb-4 mt-8 md:mt-16">
+        <Grid2 className="flex justify-center flex-col mb-4 mt-8 md:mt-20">
             <Grid2 className="text-center">
                 <Typography variant="body2" >شبکه های اجتماعی</Typography>
             </Grid2>

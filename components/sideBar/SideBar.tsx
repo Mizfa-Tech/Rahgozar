@@ -59,17 +59,17 @@ export default function SideBar(props: Props) {
   const [stateIndex, setStateIndex] = useState(props.index);
 
   return (
-    <List className="bg-white w-full text-gray-400 rounded-xl pt-[3.25rem] pb-20 shadow-md">
+    <List className="bg-white w-full text-gray-400 rounded-xl pt-[2.75rem] pb-20 shadow-md">
       {items.map((val, index) => {
         return (
           <Link href={val.href} key={index}>
-            <ListItem className="flex justify-end px-0">
+            <ListItem className="flex justify-end px-0 py-2">
               <ListItemButton
-                className={`w-full flex justify-end border-sky-600 border-y-0 border-r-0 md:pr-2 xl:pr-4 md:pl-2 xl:pl-9 border-l-[3px] py-0 ${index == stateIndex ? "border-solid" : ""}`}
+                className={`w-full flex justify-end border-sky-600 border-y-0 border-r-0 md:pr-2 xl:pr-4 md:pl-2 xl:pl-9 border-l-[3.5px] py-[3px] ${index == stateIndex ? "border-solid" : ""}`}
                 onClick={() => setStateIndex(index)}
               >
-                <Typography className={`text-right md:text-sm lg:text-base mx-3 ${index == stateIndex ? "text-black" : ""}`}>{val.title}</Typography>
-                <FontAwesomeIcon icon={val.icon} className={`md:text-sm lg:text-base ${index == stateIndex ? "text-sky-600" : ""}`} />
+                <Typography className={`text-right text-sm mx-3 ${index == stateIndex ? "text-black" : ""}`}>{val.title}</Typography>
+                <FontAwesomeIcon icon={val.icon} className={`md:text-sm lg:text-base w-5 ${index == stateIndex ? "text-sky-600" : ""}`} />
               </ListItemButton>
             </ListItem>
           </Link>

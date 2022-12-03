@@ -60,17 +60,17 @@ export default function DrawerItems(props: Props) {
 
 
     return(
-        <List className="text-gray-400 rounded-lg pt-10 pb-14 bg-gray-100">
+        <List className="text-gray-400 rounded-lg pt-10 pb-7 bg-white">
           {items.map((val, index) => {
             return (
               <Link href={val.href} key={index}>
                 <ListItem className="flex justify-end px-0">
                   <ListItemButton
-                    className={`w-full flex justify-end border-sky-600 border-y-0 border-r-0 border-l-[3px] px-0 py-0 ${index == stateIndex ? "border-solid" : ""}`}
+                    className={`w-full flex justify-end border-sky-600 border-y-0 border-r-0 border-l-[4px] mb-1 px-0 py-1 ${index == stateIndex ? "border-solid" : ""}`}
                     onClick={() => setStateIndex(index)}
                   >
-                    <Typography className={`text-right mx-3 ${index == stateIndex ? "text-black" : ""} text-lg`}>{val.title}</Typography>
-                    <FontAwesomeIcon icon={val.icon} className={`${index == stateIndex ? "text-sky-600" : ""} text-2xl`} />
+                    <Typography className={`text-right mx-3 ${index == stateIndex ? "text-black" : ""} text-base`}>{val.title}</Typography>
+                    <FontAwesomeIcon icon={val.icon} className={`${index == stateIndex ? "text-sky-600" : ""} text-2xl w-8`} />
                   </ListItemButton>
                 </ListItem>
               </Link>

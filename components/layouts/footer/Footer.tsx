@@ -6,13 +6,13 @@ import Link from "next/link";
 
 export default function Footer() {
     return(
-        <Grid2 className="flex justify-center flex-col mb-4 mt-16">
+        <Grid2 className="flex justify-center flex-col mb-4 mt-8 md:mt-16">
             <Grid2 className="text-center">
-                <Typography variant="body1" >شبکه های اجتماعی</Typography>
+                <Typography variant="body2" >شبکه های اجتماعی</Typography>
             </Grid2>
             <Grid2 className="pt-1 flex justify-center">
-                <Grid2 className="border-t-2 border-x-0 border-b-0 border-solid border-gray-400 pt-3">
-                    <Stack direction="row" alignItems="center" justifyContent="center" spacing={2}>
+                <Grid2 className="border-t border-x-0 border-b-0 border-solid border-gray-400 pt-3">
+                    <Stack direction="row" alignItems="center" justifyContent="center" spacing={{xs:1, md:2}}>
                         <Link href="/" className="hover:text-sky-900 bg-white w-8 h-8 md:w-10 md:h-10 flex justify-center items-center rounded-full shadow-md">
                             <FontAwesomeIcon icon={faTelegram} className="text-xl md:text-2xl text-zinc-800" /> 
                         </Link>
@@ -35,7 +35,7 @@ export default function Footer() {
                 </Grid2>
             </Grid2>
             <Grid2 className="mt-4 text-center">
-                <Typography variant="body1" className="text-gray-600">طراحی شده توسط <Link href="https://meechand.com" className="text-violet-800">می چند</Link></Typography>
+                <Typography variant="body2" className="text-gray-600">طراحی شده توسط <Link href="https://meechand.com" className="text-violet-800">می چند</Link></Typography>
             </Grid2>
         </Grid2>
     );

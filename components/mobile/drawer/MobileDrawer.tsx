@@ -26,7 +26,7 @@ export default function MobileDrawer(props: Props) {
 
 
   const drawer = (
-    <Grid2 className="bg-gray-100 h-screen">
+    <Grid2 className="bg-white h-screen pt-5">
       <Container>
         <Button onClick={() => props.setOpen(false)} className="text-3xl flex justify-start text-black">
           <FontAwesomeIcon icon={faClose}/>

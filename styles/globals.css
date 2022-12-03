@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Vazirmatn, sans-serif";
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
 }
 
 input {
@@ -17,10 +17,6 @@ textarea {
   height: 12rem;
   text-align: right;
 }
-
-/* .Select div:first-child {
-  padding: none;
-} */
 
 @font-face {
   font-family: Vazirmatn;

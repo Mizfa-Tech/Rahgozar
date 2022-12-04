@@ -36,33 +36,33 @@ export default function ContactUs() {
           <form className="my-5 flex flex-col items-end" onSubmit={submit}>
             <Input
               placeholder="نام (الزامی)"
-              className="w-full md:w-5/12 bg-gray-100 text-gray-800 rounded-lg px-2"
+              className="w-full md:w-5/12 bg-[#f5f5f5] text-black rounded-lg py-[0.4rem] pr-4  font-semibold text-xs"
               onChange={e => setInputData({...inputData ,inputName: e.target.value})}
               required
               disableUnderline
             />
             <Input
               placeholder="ایمیل (الزامی)"
-              className="w-full md:w-5/12 bg-gray-100 text-gray-800 mt-3 rounded-lg px-2"
+              className="w-full md:w-5/12 bg-[#f5f5f5] text-black mt-3 rounded-lg py-[0.4rem] pr-4 font-semibold text-xs"
               onChange={e => setInputData({...inputData ,email: e.target.value})}
               required
               disableUnderline
             />
             <Input
               placeholder="شماره تماس"
-              className="w-full md:w-5/12 bg-gray-100 text-gray-800 mt-3 rounded-lg px-2"
+              className="w-full md:w-5/12 bg-[#f5f5f5] text-black mt-3 rounded-lg py-[0.4rem] pr-4 font-semibold text-xs"
               onChange={e => setInputData({...inputData ,phoneNumber: e.target.value})}
               disableUnderline
             />
             <Input
               placeholder="نظر شما (الزامی)"
-              className="w-full h-48 bg-gray-100 text-gray-800 mt-3 rounded-lg flex justify-end items-start px-2"
+              className="w-full h-48 bg-[#f5f5f5] text-black mt-3 rounded-lg flex justify-end items-start py-4 pr-4 font-semibold text-xs"
               onChange={e => setInputData({...inputData ,opinion: e.target.value})}
               disableUnderline
               multiline
               required
             />
-            <Button className="bg-sky-600 text-white w-28 ml-4 rounded-lg mt-6" type="submit">
+            <Button className="bg-sky-600 text-white w-full sm:w-28 ml-4 rounded-lg mt-6" type="submit">
               ارسال
             </Button>
           </form>

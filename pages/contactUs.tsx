@@ -36,27 +36,27 @@ export default function ContactUs() {
           <form className="my-5 flex flex-col items-end" onSubmit={submit}>
             <Input
               placeholder="نام (الزامی)"
-              className="w-full md:w-5/12 bg-[#f5f5f5] text-black rounded-lg py-[0.4rem] pr-4  font-semibold text-xs"
+              className="w-full md:w-5/12 bg-[#efefef] text-black rounded-lg py-[0.4rem] pr-4  font-semibold text-xs"
               onChange={e => setInputData({...inputData ,inputName: e.target.value})}
               required
               disableUnderline
             />
             <Input
               placeholder="ایمیل (الزامی)"
-              className="w-full md:w-5/12 bg-[#f5f5f5] text-black mt-3 rounded-lg py-[0.4rem] pr-4 font-semibold text-xs"
+              className="w-full md:w-5/12 bg-[#efefef] text-black mt-3 rounded-lg py-[0.4rem] pr-4 font-semibold text-xs"
               onChange={e => setInputData({...inputData ,email: e.target.value})}
               required
               disableUnderline
             />
             <Input
               placeholder="شماره تماس"
-              className="w-full md:w-5/12 bg-[#f5f5f5] text-black mt-3 rounded-lg py-[0.4rem] pr-4 font-semibold text-xs"
+              className="w-full md:w-5/12 bg-[#efefef] text-black mt-3 rounded-lg py-[0.4rem] pr-4 font-semibold text-xs"
               onChange={e => setInputData({...inputData ,phoneNumber: e.target.value})}
               disableUnderline
             />
             <Input
               placeholder="نظر شما (الزامی)"
-              className="w-full h-48 bg-[#f5f5f5] text-black mt-3 rounded-lg flex justify-end items-start py-4 pr-4 font-semibold text-xs"
+              className="w-full h-48 bg-[#efefef] text-black mt-3 rounded-lg flex justify-end items-start py-4 pr-4 font-semibold text-xs"
               onChange={e => setInputData({...inputData ,opinion: e.target.value})}
               disableUnderline
               multiline

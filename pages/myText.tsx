@@ -1,6 +1,6 @@
 import MainLayout from "../components/layouts/MainLayout";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { Typography, Container, Button, Input } from "@mui/material";
+import { Typography, Container, Button, Input, Snackbar, Alert } from "@mui/material";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { useState } from "react";
 import axios from "axios";
@@ -12,6 +12,7 @@ export default function MyText() {
   const [value, setValue] = useState(
     "رهگذر نویسنده ی خیالی است که که متنی موقت برای طراحان گرافیک و وبسایت مینویسد. این متن یک متن ساختگی است، که در طرح های اولیه گرافیکی و پیاده سازی اولیه وب سایت ها استفاده می شود. رهگذر در مورد همه چیز اطلاعات دارد از صنعت چاپ سنتی و صنعتی گرفته تا تکنولوژی های روز دنیا که هرکدام کاربرد های مختلفی دارند که هدف اصلی هریک بهبود شرایط زندگی شماست. رهگذر کتابهای زیادی درباره ی نرم افزار های مختلف خوانده است و می تواند راهنمای خوبی برای طراحان فارسی زبان باشد. طراحان میتوانند امید داشته باشند که با پیشرفت دنیای تکنولوژی شرایط و مشکلات سخت در حوزه ی کاریشان به پایان برسد"
   );
+  const [ alertValue, setAlertValue ] = useState<boolean>(false);
 
 
   const fetchFile = () => {
@@ -62,7 +63,7 @@ export default function MyText() {
           </Grid2>
           <Grid2 className="flex justify-center mt-3 mb-[1rem]">
             <CopyToClipboard text={value}>
-              <Button className="border-solid border-[2px] border-[#1D87E2] bg-white text-sky-600 w-28 rounded-lg">
+              <Button className="border-solid border-[2px] border-[#1D87E2] bg-white text-sky-600 w-28 rounded-lg" onClick={() => setAlertValue(true)}>
                 کپی متن
               </Button>
             </CopyToClipboard>
@@ -70,6 +71,11 @@ export default function MyText() {
             onClick={fetchFile}>
               دانلود متن
             </Button>
+            <Snackbar open={alertValue} onClose={() => setAlertValue(false)} autoHideDuration={5000} anchorOrigin={{vertical: "bottom", horizontal: "right"}} >
+              <Alert onClose={() => setAlertValue(false)} severity="success" sx={{ width: '100%' }}>
+                !متن کپی شد 
+              </Alert>
+            </Snackbar>
           </Grid2>
         </Container>
       </Grid2>

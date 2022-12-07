@@ -18,9 +18,9 @@ textarea {
   text-align: right;
 }
 
-.mainSelect > svg {
+.mainSelect svg {
   position: absolute;
-  left: 0px;
+  left: 1px;
 }
 
 @font-face {

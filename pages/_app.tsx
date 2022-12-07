@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export let theme = createTheme({
+  direction: "rtl",
   typography: {
     fontFamily: "Vazirmatn, sans-serif",
   }, 

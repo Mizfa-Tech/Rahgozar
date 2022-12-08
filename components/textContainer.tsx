@@ -14,8 +14,9 @@ export default function TextContainer() {
   );
   const [ text, setText ] = useState("");
   const [ language, setLanguage ] = useState("");
-  const [ number, setNumber ] = useState("5");
+  const [ number, setNumber ] = useState("1");
   const [ alertValue, setAlertValue ] = useState<boolean>(false);  
+  const [ textType, setTextType ] = useState("paragraph");
 
 
   const fetchFile = () => {
@@ -42,15 +43,16 @@ export default function TextContainer() {
     let output = "";
     text.split(".", Number(number)).map((val) => {
       output += `. ${val}`;
-      console.log(val);
     });
     setValue(output);
+    setTextType("sentence");
   }
 
   function makeParagraph() {
     setValue(
       "رهگذر نویسنده ی خیالی است که که متنی موقت برای طراحان گرافیک و مینویسد. این متن یک متن ساختگی است، که در طرح های اولیه گرافیکی و پیاده سازی اولیه وب سایت ها استفاده می شود. رهگذر در مورد همه چیز اطلاعات دارد از صنعت چاپ سنتی و صنعتی گرفته تا تکنولوژی های روز دنیا که هرکدام کاربرد های مختلفی دارند که هدف اصلی هریک بهبود شرایط زندگی شماست. رهگذر کتابهای زیادی درباره ی نرم افزار های مختلف خوانده است و می تواند راهنمای خوبی برای طراحان فارسی زبان باشد. طراحان میتوانند امید داشته باشند که با پیشرفت دنیای تکنولوژی شرایط و مشکلات سخت در حوزه ی کاریشان به پایان برسد"
     );
+    setTextType("paragraph");
   }
 
   function makeWord() {
@@ -58,9 +60,30 @@ export default function TextContainer() {
     let output= "";
     text.split(" ", Number(number)).map((val) => {
       output += `${val} `;
-      console.log(val);
     });
     setValue(output);
+    setTextType("word");
+  }
+
+  function handleClick(e:any) {
+    setNumber(e.target.value);
+    console.log(number);
+    switch (textType) {
+      case "paragraph":
+        makeParagraph();
+        break;
+
+      case "sentence":
+        makeSentence();
+        break;
+
+      case "word":
+        makeWord();
+        break;
+    
+      default:
+        break;
+    }
   }
 
 
@@ -77,25 +100,25 @@ export default function TextContainer() {
             inputProps={{"className":"py-0 flex justify-end text-right mr-3"}}
             className="bg-[#efefef] text-gray-500 w-full py-1 mt-1 mainSelect rounded-lg" 
             IconComponent = {KeyboardArrowDownIcon} >
-              <MenuItem value="1" onClick={() => setNumber("1")}>
+              <MenuItem value="1" onClick={(e) => handleClick(e)}>
                 1
               </MenuItem>
-              <MenuItem value="2" onClick={() => setNumber("2")}>
+              <MenuItem value="2" onClick={(e) => handleClick(e)}>
                 2
               </MenuItem>
-              <MenuItem value="3" onClick={() => setNumber("3")}>
+              <MenuItem value="3" onClick={(e) => handleClick(e)}>
                 3
               </MenuItem>
-              <MenuItem value="4" onClick={() => setNumber("4")}>
+              <MenuItem value="4" onClick={(e) => handleClick(e)}>
                 4
               </MenuItem>
-              <MenuItem value="5" onClick={() => setNumber("5")}>
+              <MenuItem value="5" onClick={(e) => handleClick(e)}>
                 5
               </MenuItem>
-              <MenuItem value="10" onClick={() => setNumber("10")}>
+              <MenuItem value="10" onClick={(e) => handleClick(e)}>
                 10
               </MenuItem>
-              <MenuItem value="15" onClick={() => setNumber("15")}>
+              <MenuItem value="15" onClick={(e) => handleClick(e)}>
                 15
               </MenuItem>
             </Select> 

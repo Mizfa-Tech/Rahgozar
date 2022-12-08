@@ -23,6 +23,11 @@ textarea {
   left: 1px;
 }
 
+.MuiMenuItem-root {
+  display: flex;
+  justify-content: flex-end;
+}
+
 @font-face {
   font-family: Vazirmatn;
   src: url('../public/fonts/Vazirmatn-Regular.woff2') format('woff2');

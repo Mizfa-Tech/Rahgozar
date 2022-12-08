@@ -38,47 +38,53 @@ export default function TextContainer() {
       });
   }
 
-  function makeSentence() {
-    const text = "رهگذر نویسنده ی خیالی است که که متنی موقت برای طراحان گرافیک و وبسایت مینویسد. این متن یک متن ساختگی است، که در طرح های اولیه گرافیکی و پیاده سازی اولیه وب سایت ها استفاده می شود. رهگذر در مورد همه چیز اطلاعات دارد از صنعت چاپ سنتی و صنعتی گرفته تا تکنولوژی های روز دنیا که هرکدام کاربرد های مختلفی دارند که هدف اصلی هریک بهبود شرایط زندگی شماست. رهگذر کتابهای زیادی درباره ی نرم افزار های مختلف خوانده است و می تواند راهنمای خوبی برای طراحان فارسی زبان باشد. طراحان میتوانند امید داشته باشند که با پیشرفت دنیای تکنولوژی شرایط و مشکلات سخت در حوزه ی کاریشان به پایان برسد";
-    let output = "";
-    text.split(".", Number(number)).map((val) => {
-      output += `. ${val}`;
-    });
-    setValue(output);
-    setTextType("sentence");
-  }
 
-  function makeParagraph() {
-    setValue(
-      "رهگذر نویسنده ی خیالی است که که متنی موقت برای طراحان گرافیک و مینویسد. این متن یک متن ساختگی است، که در طرح های اولیه گرافیکی و پیاده سازی اولیه وب سایت ها استفاده می شود. رهگذر در مورد همه چیز اطلاعات دارد از صنعت چاپ سنتی و صنعتی گرفته تا تکنولوژی های روز دنیا که هرکدام کاربرد های مختلفی دارند که هدف اصلی هریک بهبود شرایط زندگی شماست. رهگذر کتابهای زیادی درباره ی نرم افزار های مختلف خوانده است و می تواند راهنمای خوبی برای طراحان فارسی زبان باشد. طراحان میتوانند امید داشته باشند که با پیشرفت دنیای تکنولوژی شرایط و مشکلات سخت در حوزه ی کاریشان به پایان برسد"
-    );
-    setTextType("paragraph");
-  }
-
-  function makeWord() {
+  function handleText(type:any, e:any) {
     const text = "رهگذر نویسنده ی خیالی است که که متنی موقت برای طراحان گرافیک و وبسایت مینویسد. این متن یک متن ساختگی است، که در طرح های اولیه گرافیکی و پیاده سازی اولیه وب سایت ها استفاده می شود. رهگذر در مورد همه چیز اطلاعات دارد از صنعت چاپ سنتی و صنعتی گرفته تا تکنولوژی های روز دنیا که هرکدام کاربرد های مختلفی دارند که هدف اصلی هریک بهبود شرایط زندگی شماست. رهگذر کتابهای زیادی درباره ی نرم افزار های مختلف خوانده است و می تواند راهنمای خوبی برای طراحان فارسی زبان باشد. طراحان میتوانند امید داشته باشند که با پیشرفت دنیای تکنولوژی شرایط و مشکلات سخت در حوزه ی کاریشان به پایان برسد";
     let output= "";
-    text.split(" ", Number(number)).map((val) => {
-      output += `${val} `;
-    });
-    setValue(output);
-    setTextType("word");
-  }
 
-  function handleClick(e:any) {
-    setNumber(e.target.value);
-    console.log(number);
-    switch (textType) {
+    switch (type) {
       case "paragraph":
-        makeParagraph();
+        setValue(
+          "رهگذر نویسنده ی خیالی است که که متنی موقت برای طراحان گرافیک و مینویسد. این متن یک متن ساختگی است، که در طرح های اولیه گرافیکی و پیاده سازی اولیه وب سایت ها استفاده می شود. رهگذر در مورد همه چیز اطلاعات دارد از صنعت چاپ سنتی و صنعتی گرفته تا تکنولوژی های روز دنیا که هرکدام کاربرد های مختلفی دارند که هدف اصلی هریک بهبود شرایط زندگی شماست. رهگذر کتابهای زیادی درباره ی نرم افزار های مختلف خوانده است و می تواند راهنمای خوبی برای طراحان فارسی زبان باشد. طراحان میتوانند امید داشته باشند که با پیشرفت دنیای تکنولوژی شرایط و مشکلات سخت در حوزه ی کاریشان به پایان برسد"
+        );
+        setTextType("paragraph");
         break;
 
       case "sentence":
-        makeSentence();
+        text.split(".", Number(e)).map((val) => {
+          output += `. ${val}`;
+        });
+        setValue(output);
+        setTextType("sentence");
         break;
 
       case "word":
-        makeWord();
+        text.split(" ", Number(e)).map((val) => {
+          output += `${val} `;
+        });
+        setValue(output);
+        setTextType("word");
+        break;
+    
+      default:
+        break;
+    }
+  }
+
+  function handleClick(e:any) {
+
+    switch (textType) {
+      case "paragraph":
+        handleText("paragraph", e);
+        break;
+
+      case "sentence":
+        handleText("sentence", e);
+        break;
+
+      case "word":
+        handleText("word", e);
         break;
     
       default:
@@ -95,30 +101,33 @@ export default function TextContainer() {
         <Grid2 className="flex justify-between sm:justify-end border-b border-solid border-gray-400 border-x-0 border-t-0 pb-6 pt-[0.9rem]">
           <Grid2 className="text-right w-full sm:w-28">
             <Typography className="text-neutral-800">:تعداد</Typography>
-            <Select value={number} onChange={(e) => setNumber(e.target.value)} displayEmpty
+            <Select value={number} onChange={(e) => {
+              setNumber(e.target.value);
+              handleClick(e.target.value);
+            }} displayEmpty
             sx={{ boxShadow: 'none', '.MuiOutlinedInput-notchedOutline': { border: 0 }}}
             inputProps={{"className":"py-0 flex justify-end text-right mr-3"}}
             className="bg-[#efefef] text-gray-500 w-full py-1 mt-1 mainSelect rounded-lg" 
             IconComponent = {KeyboardArrowDownIcon} >
-              <MenuItem value="1" onClick={(e) => handleClick(e)}>
+              <MenuItem value={1}>
                 1
               </MenuItem>
-              <MenuItem value="2" onClick={(e) => handleClick(e)}>
+              <MenuItem value={2}>
                 2
               </MenuItem>
-              <MenuItem value="3" onClick={(e) => handleClick(e)}>
+              <MenuItem value={3}>
                 3
               </MenuItem>
-              <MenuItem value="4" onClick={(e) => handleClick(e)}>
+              <MenuItem value={4}>
                 4
               </MenuItem>
-              <MenuItem value="5" onClick={(e) => handleClick(e)}>
+              <MenuItem value={5}>
                 5
               </MenuItem>
-              <MenuItem value="10" onClick={(e) => handleClick(e)}>
+              <MenuItem value={10}>
                 10
               </MenuItem>
-              <MenuItem value="15" onClick={(e) => handleClick(e)}>
+              <MenuItem value={15}>
                 15
               </MenuItem>
             </Select> 
@@ -130,13 +139,13 @@ export default function TextContainer() {
             inputProps={{"className":"py-0 flex justify-end text-right"}}
             className="bg-[#efefef] text-gray-500 w-full py-1 mt-1 mainSelect rounded-lg" 
             IconComponent = {KeyboardArrowDownIcon} >
-              <MenuItem value="" onClick={makeParagraph}>
+              <MenuItem value="" onClick={() => handleText("paragraph", number)}>
                 پاراگراف
               </MenuItem>
-              <MenuItem value="10" onClick={makeSentence}>
+              <MenuItem value="10" onClick={() => handleText("sentence", number)}>
                 جمله 
               </MenuItem>
-              <MenuItem value="20" onClick={makeWord}>
+              <MenuItem value="20" onClick={() => handleText("word", number)}>
                 کلمه
               </MenuItem>
             </Select>

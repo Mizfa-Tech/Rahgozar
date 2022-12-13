@@ -2,28 +2,31 @@ import { Container, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import MainLayout from "../components/layouts/MainLayout";
 import Image from "next/image";
-import teamMember from "../public/images/person.jpg"
+import Kiyarash from "../public/images/Kiyarash.jpg"
+import Nilofar from "../public/images/Nilofar.jpg"
+import Younes from "../public/images/Younes.jpg"
+import Mohammad from "../public/images/Mohamad Amin.jpg"
 
 const member = [
   {
-    name: "یونس چلبی",
-    job: "طراح رابط کاربری",
-    picture: teamMember,
+    name: "نیلوفر اسماعیلی",
+    job: "نویسنده ی متن",
+    picture: Nilofar,
+  },
+  {
+    name: "محمدامین بصیرنیا",
+    job: "پلاگین وردپرس",
+    picture: Mohammad,
   },
   {
     name: "یونس چلبی",
-    job: "طراح رابط کاربری",
-    picture: teamMember,
+    job: "UI/UX طراح",
+    picture: Younes,
   },
   {
-    name: "یونس چلبی",
-    job: "طراح رابط کاربری",
-    picture: teamMember,
-  },
-  {
-    name: "یونس چلبی",
-    job: "طراح رابط کاربری",
-    picture: teamMember,
+    name: "کیارش حدیدیان",
+    job: "فرانت اند دولوپر",
+    picture: Kiyarash,
   },
 ];
 
@@ -43,10 +46,10 @@ export default function Ourteam() {
               return(
                 <Grid2 key={index} className=" my-5 md:my-0 w-10/12 m-auto sm:w-5/12 md:w-[21%] md:m-0 shadow-md md:shadow-md rounded-lg px-6 md:px-2 py-4">
                   <Grid2 className="flex justify-center">
-                    <Image src={val.picture} alt="Team Member" className="w-40 h-32 md:w-[8.75rem] md:h-28 rounded-md" />
+                    <Image src={val.picture} alt="Team Member" className="w-40 h-32 md:w-[8.75rem] md:h-28 rounded-md object-cover" />
                   </Grid2>
-                  <Typography variant="subtitle2" className="text-black text-right mt-2">{val.name}</Typography>
-                  <Typography className="text-gray-500 text-right text-xs mt-1">{val.job}</Typography>
+                  <Typography variant="subtitle2" className="text-black text-center sm:text-right  mt-2">{val.name}</Typography>
+                  <Typography className="text-gray-500 text-center sm:text-right text-xs mt-1">{val.job}</Typography>
                 </Grid2>
               );
             })

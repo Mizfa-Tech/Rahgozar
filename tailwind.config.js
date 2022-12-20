@@ -11,5 +11,6 @@ module.exports = {
   corePlugins: {
     preflight: false,
   },
+  variants: ["responsive", "group-hover", "hover", "focus", "active"],
   plugins: [],
 };

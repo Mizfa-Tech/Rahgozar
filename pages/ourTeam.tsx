@@ -6,6 +6,7 @@ import Kiyarash from "../public/images/Kiyarash.jpg"
 import Nilofar from "../public/images/Nilofar.jpg"
 import Younes from "../public/images/Younes.jpg"
 import Mohammad from "../public/images/Mohamad Amin.jpg"
+import Head from "next/head";
 
 const member = [
   {
@@ -33,6 +34,11 @@ const member = [
 export default function Ourteam() {
   return (
     <MainLayout index={6}>
+      <Head>
+        <title>تیم رهگذر</title>
+        <meta name="description" content="تیم رهگذر"/>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Grid2 className="bg-white rounded-xl w-full md:w-[80%] m-auto pt-2 pb-5 shadow-md">
         <Grid2 className="text-center">
           <Typography variant="h5" className="font-bold m-3" >تیم ما</Typography>

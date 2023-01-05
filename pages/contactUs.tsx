@@ -2,6 +2,7 @@ import { Container, Input, Typography, Button } from "@mui/material";
 import MainLayout from "../components/layouts/MainLayout";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { useState } from "react";
+import Head from "next/head";
 
 export default function ContactUs() {
   const [inputData, setInputData] = useState<any>({
@@ -30,6 +31,11 @@ export default function ContactUs() {
   
   return (
     <MainLayout index={3}>
+      <Head>
+        <title>تماس با ما</title>
+        <meta name="description" content="تماس با ما"/>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Grid2 className="bg-white rounded-xl w-full md:w-[80%] m-auto text-gray-400 py-2  shadow-md">
         <Container className="my-6">
           <Typography align="center" className="text-black font-bold">با ما صحبت کنید</Typography>

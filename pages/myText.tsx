@@ -4,7 +4,7 @@ import { Typography, Container, Button, Input, Snackbar, Alert } from "@mui/mate
 import CopyToClipboard from "react-copy-to-clipboard";
 import { useState } from "react";
 import axios from "axios";
-
+import Head from "next/head";
 
 export default function MyText() {
   
@@ -39,6 +39,11 @@ export default function MyText() {
 
   return (
     <MainLayout index={1}>
+      <Head>
+        <title>شمارشگر کاراکتر و شمارشگر کلمات در یک متن</title>
+        <meta name="description" content="شمارشگر کاراکتر و شمارشگر کلمات در یک متن"/>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Grid2 className="bg-white rounded-xl w-full md:w-[80%] m-auto py-4 shadow-md">
         <Container>
           <Grid2 className="flex flex-col md:flex-row justify-between border-b-2 border-solid border-gray-300 border-x-0 border-t-0 pb-4 mt-[1.5rem]">
